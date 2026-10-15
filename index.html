@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Notes</title>
+        <style>
+            .content{
+                text-align: center;
+                margin-top: 30px;
+            }
+            .content h1{
+                color: brown;
+                font-size: 50px;
+            }
+            .content p{
+                font-size: 30px;
+                color: gray;
+                font-style: italic;
+                margin-top: 5px;
+            }
+            .text{
+                text-align: center;
+                margin-top: 30px;
+            }
+            .text input{
+                width: 300px;
+                padding: 12px;
+                font-size: 16px;
+                border: 1px solid gray;
+                border-radius: 8px;
+            }
+            .text textarea{
+                width: 300px;
+                height: 120px;
+                padding: 15px;
+                font-size: 20px;
+                border: 2px solid chartreuse;
+                border-radius: 8px;
+                resize: horizontal;
+            }
+            .text button{
+                padding: 12px 25px;
+                background-color: red;
+                border: 2px solid black;
+                cursor: pointer;
+            }
+            .note {
+                width: 300px;
+                margin: 20px auto;
+                padding: 15px;
+                border: 1px solid gray;
+                border-radius: 10px;
+                background-color: lightyellow;
+                text-align: left;
+            }
+        </style>
+
+        
+    </head>
+
+    <body>
+        <div class="content">
+            <h1>Notes</h1>
+            <p> Your Personal Notes app</p>
+        </div>
+        <div class="text">
+            <input type="text" placeholder="Enter the title" id="title">
+            <br> <br>
+            <textarea placeholder="Enter the description" id="description"></textarea>
+            <br><br>
+            <button onclick="addnote()">Add Note</button>
+        </div>
+        <div id="notesList"></div>
+
+        <script>
+            function addnote(){
+                let title = document.getElementById("title").value;
+                let description = document.getElementById("description").value;
+                let note = document.createElement("div");
+                note.className = "note";
+                note.innerHTML = "<h3>" + title + "</h3><p>" + description + "</p>";
+                document.getElementById("notesList").appendChild(note)
+            }
+        </script>
+        
+    </body>
+
+</html>
